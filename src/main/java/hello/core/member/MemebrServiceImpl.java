@@ -1,5 +1,7 @@
 package hello.core.member;
 
+import org.springframework.stereotype.Service;
+
 public class MemebrServiceImpl implements MemberService{
 
     private final MemberRepository memberRepository;
@@ -9,7 +11,7 @@ public class MemebrServiceImpl implements MemberService{
     }
 
     @Override
-    public void join(Member member) {
+    public void join(Member member)    {
         memberRepository.save(member);
 
     }
@@ -20,7 +22,7 @@ public class MemebrServiceImpl implements MemberService{
     }
 
     //테스트 용도
-    public MemberRepository memberRepository() {
+    public MemberRepository getMemberRepository() {
         return memberRepository;
     }
 }
