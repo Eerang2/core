@@ -1,17 +1,22 @@
 package hello.core.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-public class MemebrServiceImpl implements MemberService{
+@Component
+//@Service
+public class MemebrServiceImpl implements MemberService {
 
     private final MemberRepository memberRepository;
 
+    @Autowired    // =  ac.getBean(MemberRepository.class)
     public MemebrServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
 
     @Override
-    public void join(Member member)    {
+    public void join(Member member) {
         memberRepository.save(member);
 
     }
